@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Hexe Marine",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": -0.3, "left": -13.38, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 166.34,
+      "left": -18.97,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -5.6,
+      "left": 241.1,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "oled1:VCC", "esp:3V3.2", "red", [ "v0" ] ],
+    [ "oled1:SDA", "esp:8", "green", [ "v0" ] ],
+    [ "oled1:SCL", "esp:9", "green", [ "v0" ] ],
+    [ "rgb1:R", "esp:4", "green", [ "v0" ] ],
+    [ "rgb1:G", "esp:5", "green", [ "v86.4", "h1.3" ] ],
+    [ "rgb1:B", "esp:6", "green", [ "v76.8", "h1.6" ] ],
+    [ "rgb1:COM", "esp:GND.10", "green", [ "v-0.4", "h-47.9", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
